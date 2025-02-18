@@ -14,6 +14,7 @@ import { baseURL } from "@/app/resources";
 import TableOfContents from "@/components/about/TableOfContents";
 import styles from "@/components/about/about.module.scss";
 import { person, about, social } from "@/app/resources/content";
+import Image from "next/image";
 
 export async function generateMetadata() {
   const title = about.title;
@@ -62,9 +63,9 @@ export default function About() {
       items: about.studies.institutions.map((institution) => institution.name),
     },
     {
-      title: about.technical.title,
-      display: about.technical.display,
-      items: about.technical.skills.map((skill) => skill.title),
+      title: about.project.title,
+      display: about.project.display,
+      items: about.project.projects.map((skill) => skill.title),
     },
   ];
   return (
@@ -291,18 +292,51 @@ export default function About() {
             </>
           )}
 
-          {about.technical.display && (
+          {about.skill.display && (
+              <>
+                <Heading
+                    as="h2"
+                    id={about.skill.title}
+                    variant="display-strong-s"
+                    marginBottom="40"
+                >
+                  {about.skill.title}
+                </Heading>
+                <Column fillWidth gap="l" marginBottom="40">
+                  {about.skill.skills.map((skill, index) => (
+                      <Column fillWidth>
+                        <Flex fillWidth horizontal="space-between" vertical="end" marginBottom="4">
+                          <Text variant="heading-strong-l">
+                            {skill.title}
+                          </Text>
+                        </Flex>
+                        <Column as="ul" gap="16">
+                            <Text
+                                as="li"
+                                variant="body-default-m"
+                            >
+                              {skill.description}
+                            </Text>
+                        </Column>
+
+                      </Column>
+                  ))}
+                </Column>
+              </>
+          )}
+
+          {about.project.display && (
             <>
               <Heading
                 as="h2"
-                id={about.technical.title}
+                id={about.project.title}
                 variant="display-strong-s"
                 marginBottom="40"
               >
-                {about.technical.title}
+                {about.project.title}
               </Heading>
-              <Column fillWidth gap="l">
-                {about.technical.skills.map((skill, index) => (
+              <Column fillWidth gap="1">
+                {about.project.projects.map((skill, index) => (
                   <Column key={`${skill}-${index}`} fillWidth gap="4">
                     <Text variant="heading-strong-l">{skill.title}</Text>
                     <Text variant="body-default-m" onBackground="neutral-weak">
