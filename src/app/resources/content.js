@@ -1,14 +1,14 @@
 import { InlineCode } from "@/once-ui/components";
 
 const person = {
-  firstName: "Selene",
-  lastName: "Yu",
+  firstName: "David",
+  lastName: "Kevin",
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "Design Engineer",
+  role: "Senior Web Developer",
   avatar: "/images/avatar.jpg",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  location: "America/Los_Angeles", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
   languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
 };
 
@@ -42,9 +42,9 @@ const social = [
     link: "",
   },
   {
-    name: "Email",
+    name: "davidkevin0305",
     icon: "email",
-    link: "mailto:example@gmail.com",
+    link: "mailto:davidkevin0305@outlook.com",
   },
 ];
 
@@ -52,11 +52,12 @@ const home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Design engineer and builder</>,
+  headline: <>Senior Web Developer</>,
   subline: (
     <>
-      I'm Selene, a design engineer at <InlineCode>FLY</InlineCode>, where I craft intuitive
-      <br /> user experiences. After hours, I build my own projects.
+      {/*I'm {person.name}, a Senior Web Developer at <InlineCode>FLY</InlineCode>, where I craft intuitive*/}
+      {/*<br /> user experiences. After hours, I build my own projects.*/}
+      I'm {person.name}, a Senior Web Developer with 7 years experience.
     </>
   ),
 };
@@ -81,7 +82,7 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
+        {person.firstName} is a Senior Web Developer with a passion for transforming complex challenges
         into simple, elegant design solutions. Her work spans digital interfaces, interactive
         experiences, and the convergence of design and technology.
       </>
@@ -92,18 +93,29 @@ const about = {
     title: "Work Experience",
     experiences: [
       {
-        company: "FLY",
+        company: "Web-Weave – Los Angeles, CA",
         timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        role: "Senior Web Developer",
         achievements: [
-          <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
-          </>,
-          <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
-          </>,
+            <>
+              Led and optimized web solutions across multiple projects.
+            </>,
+            <>
+              Developed and maintained web applications using React.js, Next.js, and PHP.
+            </>,
+            <>
+              Integrated Wagtail, Shopify, and WordPress solutions for diverse clients.
+            </>,
+            <>
+              Implemented RESTful APIs to improve system efficiency and maintainability.
+            </>,
+            <>
+              Managed CI/CD pipelines for automated deployment and development workflow.
+            </>,
+            <>
+              Mentored junior developers and conducted code reviews to uphold high-quality standards.
+            </>
+
         ],
         images: [
           // optional: leave the array empty if you don't want to display images
@@ -116,18 +128,36 @@ const about = {
         ],
       },
       {
-        company: "Creativ3",
+        company: "WestHillsWeb – Los Angeles, CA",
         timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        role: "Web Developer",
+        achievements: [
+            <>
+              Improved website performance by optimizing assets, reducing server response times, and using lazy loading.
+            </>,
+            <>
+              Integrated APIs, payment gateways, and authentication systems.
+            </>,
+            <>
+              Collaborated with UI/UX designers to enhance application usability and aesthetics.
+            </>
+        ],
+        images: [],
+      },
+      {
+        company: "Visital Utility – Los Angeles, CA",
+        timeframe: "2017 - 2018",
+        role: "Junior Web Developer",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            Contributed to developing web applications with an emphasis on front-end features.
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            Resolved bugs, enhanced performance, and refactored code to uphold best practices.
           </>,
+          <>
+            Acquired practical experience with Git, Agile workflows, and responsive design.
+          </>
         ],
         images: [],
       },
@@ -135,24 +165,20 @@ const about = {
   },
   studies: {
     display: true, // set to false to hide this section
-    title: "Studies",
+    title: "Educations",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
-      },
-      {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "Phillips Graduate University",
+        description: <>MSIT in Computer Science</>,
       },
     ],
   },
-  technical: {
-    display: true, // set to false to hide this section
-    title: "Technical skills",
-    skills: [
+  project: {
+    display: false, // set to false to hide this section
+    title: "Projects",
+    projects: [
       {
-        title: "Figma",
+        title: "Next.js",
         description: <>Able to prototype in Figma with Once UI with unnatural speed.</>,
         // optional: leave the array empty if you don't want to display images
         images: [
@@ -185,6 +211,32 @@ const about = {
       },
     ],
   },
+  skill:{
+    display: true, // set to false to hide this section
+    title: "Technical skills",
+    skills: [
+      {
+        title: "Front-End",
+        description:<>JavaScript(ES6+), HTML5, CSS3, Bootstrap, JSON, React.js, Next.js, Vue.js, TypeScript</>
+      },
+      {
+        title: "Back-End",
+        description:<>PHP, Python, Node.js, FastAPI</>
+      },
+      {
+        title: "Databases-End",
+        description:<>MySQL, MongoDB, Oracle</>
+      },
+      {
+        title: "Tools & Plateforms",
+        description:<>Wagtail, Docker, Shopify, WordPress, Django</>
+      },
+      {
+        title: "Other",
+        description:<>RESTful APIs, Microservices Architecture, Agile & Scrum Methodologies</>
+      },
+    ]
+  }
 };
 
 const blog = {
